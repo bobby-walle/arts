@@ -50,6 +50,8 @@ Tips：先分析核心诉求，不要迷惑于表象
 <!-- 本来是想着分享自己的文章和观点，但是不得不承认之前的计划太乐观自己的能力，也算是给自己上了一课。
 总体目标不变，后续会有自己的文章和观点分享。-->
 
-本周分享一个最近自己一直在使用的工具吧，一个网页端的音乐播放器，看起来逼格满满
-[播放](https://musicforprogramming.net/)
+与对iOS和Android来说，有一点永远逃不掉：界面卡顿
+其实Android在4.0之后的版本UI流畅性已经有了很大的改进，Google对界面绘制的时机做了优化处理
+[Choreographer](https://juejin.im/post/5cb1bafe6fb9a068a84fda40),一起来学习和了解下Google在Android优化重的一个努力
+
 
