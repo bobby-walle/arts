@@ -3,6 +3,7 @@
 不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成
 
 <code>
+
 class Solution {
     public static int removeDuplicates(int[] nums) {
         if(nums == null || nums.length <= 0){
@@ -28,8 +29,9 @@ class Solution {
                 tv = num;
             }
         }
-        
+
         return tempIndex + 1;
     }
 }
+
 </code>
