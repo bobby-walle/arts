@@ -33,5 +33,8 @@
             return tempIndex + 1;
         }
     }
-
 </code>
+
+## Review
+阅读文章为[One Simple Trick That Will Save You Hours When Developing Android Apps](https://medium.com/atomic-robot/one-simple-trick-that-will-save-you-hours-when-developing-android-apps-6902c3aef226)
+Live Templates
