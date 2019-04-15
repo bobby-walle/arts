@@ -3,35 +3,35 @@
 不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成
 
 <code>
-
-class Solution {
-    public static int removeDuplicates(int[] nums) {
-        if(nums == null || nums.length <= 0){
-            return 0;
-        }
-        
-        if(nums.length == 1){
-            return 1;
-        }
-        
-        int tv = nums[0];
-        int tempIndex = 0;
-        int length = nums.length;
-        for(int i = 1; i < length; i++){
-            int num = nums[i];
-            if(tv != num){
-                if(i > tempIndex + 1){
-                    nums[tempIndex + 1] = num;
-                    tempIndex = tempIndex + 1;
-                } else {
-                    tempIndex = i;
-                }
-                tv = num;
+    
+    class Solution {
+        public static int removeDuplicates(int[] nums) {
+            if(nums == null || nums.length <= 0){
+                return 0;
             }
-        }
 
-        return tempIndex + 1;
+            if(nums.length == 1){
+                return 1;
+            }
+
+            int tv = nums[0];
+            int tempIndex = 0;
+            int length = nums.length;
+            for(int i = 1; i < length; i++){
+                int num = nums[i];
+                if(tv != num){
+                    if(i > tempIndex + 1){
+                        nums[tempIndex + 1] = num;
+                        tempIndex = tempIndex + 1;
+                    } else {
+                        tempIndex = i;
+                    }
+                    tv = num;
+                }
+            }
+
+            return tempIndex + 1;
+        }
     }
-}
 
 </code>
