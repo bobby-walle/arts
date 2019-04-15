@@ -51,6 +51,7 @@ Tips：先分析核心诉求，不要迷惑于表象
 总体目标不变，后续会有自己的文章和观点分享。-->
 
 与对iOS和Android来说，有一点永远逃不掉：界面卡顿
+
 其实Android在4.0之后的版本UI流畅性已经有了很大的改进，Google对界面绘制的时机做了优化处理
 [Choreographer](https://juejin.im/post/5cb1bafe6fb9a068a84fda40),一起来学习和了解下Google在Android优化重的一个努力
 
