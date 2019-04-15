@@ -37,4 +37,6 @@
 
 ## Review
 阅读文章为[One Simple Trick That Will Save You Hours When Developing Android Apps](https://medium.com/atomic-robot/one-simple-trick-that-will-save-you-hours-when-developing-android-apps-6902c3aef226)
-Live Templates
+文章主要说明在Android项目开发时会有很多的重复性工作，提供了一个方式让我们不再做这些重复性的工作。
+主要说通过Live Templates，在Android studio中设置模版内容，将重复性的内容作为模版，进行快速开发。
+
