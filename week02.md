@@ -63,19 +63,21 @@ Flutter是Google开源的跨平台开发移动端产品技术，但是Google爸�
  > 将targetSdkVersion降到27以下
  > 更改网络安全配置
  
-个人认为第一种方式最好，推荐使用。但是如果暂时没有办法实现，可以通过后面两种方式实现使用http请求。降低targetSdkVersion可能会影响应用市场的审核等问题，不推荐使用。我们可以使用如下方式配置网络安全文件，实现App使用Http请求，用于在切换Https前的时间缓冲。
+个人认为第一种方式最好，推荐使用。但是如果暂时没有办法实现，可以通过后面两种方式实现使用http请求。
+降低targetSdkVersion可能会影响应用市场审核获取引出其他适配性问题，不推荐使用。
+可以使用如下方式，通过配置网络安全文件，实现App使用Http请求，用于在切换Https前的时间缓冲。
 
 <code>
-    
+
     <?xml version="1.0" encoding="utf-8"?>
     <network-security-config>
         <base-config cleartextTrafficPermitted="true" />
     </network-security-config>
- 
+
 </code>
 
 <code>
-
+    
     <?xml version="1.0" encoding="utf-8"?>
     <manifest ... >
         <application android:networkSecurityConfig="@xml/network_security_config"
@@ -83,7 +85,7 @@ Flutter是Google开源的跨平台开发移动端产品技术，但是Google爸�
             ...
         </application>
     </manifest>
-
+    
 </code>
 
 ## Share
