@@ -4,7 +4,7 @@
 注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）
 
 <code>
-    
+
     public static int maxProfit(int[] prices) {
         int total = 0;
         if (prices == null || prices.length <= 1) {
@@ -32,7 +32,7 @@
         }
         return total;
     }
-    
+
 </code>
 
 ## Review
@@ -77,7 +77,7 @@ Flutter是Google开源的跨平台开发移动端产品技术，但是Google爸�
 </code>
 
 <code>
-    
+
     <?xml version="1.0" encoding="utf-8"?>
     <manifest ... >
         <application android:networkSecurityConfig="@xml/network_security_config"
@@ -85,7 +85,7 @@ Flutter是Google开源的跨平台开发移动端产品技术，但是Google爸�
             ...
         </application>
     </manifest>
-    
+
 </code>
 
 ## Share
