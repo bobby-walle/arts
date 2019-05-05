@@ -3,8 +3,7 @@
 设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）。
 注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）
 
-<code>
-
+    <code>
     public static int maxProfit(int[] prices) {
         int total = 0;
         if (prices == null || prices.length <= 1) {
@@ -32,8 +31,7 @@
         }
         return total;
     }
-
-</code>
+    </code>
 
 ## Review
 阅读文章为[WebViews in Flutter](https://blog.geekyants.com/webviews-in-flutter-87194714ce3d)
@@ -67,17 +65,14 @@ Flutter是Google开源的跨平台开发移动端产品技术，但是Google爸�
 降低targetSdkVersion可能会影响应用市场审核获取引出其他适配性问题，不推荐使用。
 可以使用如下方式，通过配置网络安全文件，实现App使用Http请求，用于在切换Https前的时间缓冲。
 
-<code>
-
+    <code>
     <?xml version="1.0" encoding="utf-8"?>
     <network-security-config>
         <base-config cleartextTrafficPermitted="true" />
     </network-security-config>
+    </code>
 
-</code>
-
-<code>
-
+    <code>
     <?xml version="1.0" encoding="utf-8"?>
     <manifest ... >
         <application android:networkSecurityConfig="@xml/network_security_config"
@@ -85,8 +80,7 @@ Flutter是Google开源的跨平台开发移动端产品技术，但是Google爸�
             ...
         </application>
     </manifest>
-
-</code>
+    </code>
 
 ## Share
 [全面剖析Android消息机制源码](https://juejin.im/post/5cb43a8de51d456e7b372059?utm_source=gold_browser_extension)，不是仅介绍Handler、Message、Looper，让我们更深入一点的了解
