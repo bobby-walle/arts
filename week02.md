@@ -4,6 +4,7 @@
 注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）
 
 <code>
+    
     public static int maxProfit(int[] prices) {
         int total = 0;
         if (prices == null || prices.length <= 1) {
@@ -31,6 +32,7 @@
         }
         return total;
     }
+    
 </code>
 
 ## Review
@@ -43,6 +45,7 @@ Flutter是Google开源的跨平台开发移动端产品技术，但是Google爸�
  > 2. 通过路由方式打开WebView页面加载URL
  > 3. 简洁清晰的代码
  > 4. iOS接入时的注意事项，需要在Info.plist中配置io.flutter.embedded_views_preview为YES
+
 非常棒的一篇Flutter WebView入门文章
 由于Flutter未实现原生的WebView，通过Plugin实现的方式在现阶段有很多问题(哭笑脸)，一步一个坑呀，必要时候需要自己开发相关功能
 
@@ -63,23 +66,25 @@ Flutter是Google开源的跨平台开发移动端产品技术，但是Google爸�
 个人认为第一种方式最好，推荐使用。但是如果暂时没有办法实现，可以通过后面两种方式实现使用http请求。降低targetSdkVersion可能会影响应用市场的审核等问题，不推荐使用。我们可以使用如下方式配置网络安全文件，实现App使用Http请求，用于在切换Https前的时间缓冲。
 
 <code>
-      <?xml version="1.0" encoding="utf-8"?>
-      <network-security-config>
-          <base-config cleartextTrafficPermitted="true" />
-      </network-security-config>
+    
+    <?xml version="1.0" encoding="utf-8"?>
+    <network-security-config>
+        <base-config cleartextTrafficPermitted="true" />
+    </network-security-config>
+ 
 </code>
 
 <code>
-      <?xml version="1.0" encoding="utf-8"?>
-      <manifest ... >
-          <application android:networkSecurityConfig="@xml/network_security_config"
-                          ... >
-              ...
-          </application>
-      </manifest>
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <manifest ... >
+        <application android:networkSecurityConfig="@xml/network_security_config"
+            ... >
+            ...
+        </application>
+    </manifest>
+
 </code>
 
 ## Share
 [全面剖析Android消息机制源码](https://juejin.im/post/5cb43a8de51d456e7b372059?utm_source=gold_browser_extension)，不是仅介绍Handler、Message、Looper，让我们更深入一点的了解
-
-
