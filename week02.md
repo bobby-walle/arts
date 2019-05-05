@@ -63,10 +63,14 @@ Flutter是Google开源的跨平台开发移动端产品技术，但是Google爸�
 降低targetSdkVersion可能会影响应用市场审核获取引出其他适配性问题，不推荐使用。
 可以使用如下方式，通过配置网络安全文件，实现App使用Http请求，用于在切换Https前的时间缓冲。
 
+创建value/xml文件夹，并创建network_security_config.xml文件，写入如下内容：
+
     <?xml version="1.0" encoding="utf-8"?>
     <network-security-config>
         <base-config cleartextTrafficPermitted="true" />
     </network-security-config>
+
+将上面创建的xml配置文件应用到application中
 
     <?xml version="1.0" encoding="utf-8"?>
     <manifest ... >
