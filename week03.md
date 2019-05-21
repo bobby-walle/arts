@@ -46,21 +46,21 @@
 
 第二版本：解决犯傻的问题，比如不创建零时字符串、不创建字符串数组
 主要代码变动如下，这一版本改变后执行时间由97ms降低到7ms，作为参考
-'''
-for (int index = 0; index < s.length(); index++) {
+
+    for (int index = 0; index < s.length(); index++) {
             if ('(' == s.charAt(index)) {
                 tag += 1;
             } else if (')' == s.charAt(index)) {
                 tag -= 1;
             }
-...
-'''
+	...
+
 第三版本：在比较的过程中添加字符，不再通过substring方法获取。观察下面的测试用例
 ((())) => 1 2 3 2 1 0
 可以发现 '(' 在 tag>1 时即可添加，')' 在 tag > 0 时即可添加，正好将外层括号去掉。测试执行时间
 再次降低到2ms
-'''
-private static String removeOuterParentheses(String s) {
+
+    private static String removeOuterParentheses(String s) {
         int tag = 0;
         char[] cArr = s.toCharArray();
         StringBuilder sb = new StringBuilder();
@@ -78,8 +78,7 @@ private static String removeOuterParentheses(String s) {
             }
         }
         return sb.toString();
-}
-'''
+    }
 
 ## Review
 阅读文章为[BLoC pattern in Flutter](https://medium.com/flutterdevs/bloc-pattern-in-flutter-part-1-flutterdevs-128f90059f5c)
@@ -95,36 +94,32 @@ Google将Flutter发展为全平台开发环境后，BLoC可以复用再所有支
 
 ## Tip
 Flutter通过pubspec.yaml来管理assets资源，assets资源创建时需要有一个前导符号：'-'，该Tip就是前天遇到的一个实际问题。
-eg:
-'''
-assets:
-    - images/ic_nav_back.png
-'''
+
+    assets:
+        - images/ic_nav_back.png
+
 在添加资源时，如果不小心多了一个'-'，编译就会错误，错误信息如下：
-'''
-Flutter crash report; please file at https://github.com/flutter/flutter/issues.
 
-## command
+    Flutter crash report; please file at https://github.com/flutter/flutter/issues.
 
-flutter build bundle --suppress-analytics --target lib/main.dart --compilation-trace-file compilation.txt --target-platform android-arm --precompiled --asset-dir /Users/bobzhai/FlutterProjects/AcewillManager/acewill_manager/build/app/intermediates/flutter/release/flutter_assets --release
+    command
+    flutter build bundle --suppress-analytics --target lib/main.dart --compilation-trace-file compilation.txt     --target-platform android-arm --precompiled --asset-dir /Users/bobzhai/FlutterProjects/    AcewillManager/acewill_manager/build/app/intermediates/flutter/release/flutter_assets --release
 
-## exception
+    exception
+    NoSuchMethodError: NoSuchMethodError: The getter 'length' was called on null.
+    Receiver: null
+    Tried calling: length
 
-NoSuchMethodError: NoSuchMethodError: The getter 'length' was called on null.
-Receiver: null
-Tried calling: length
+    #0      Object.noSuchMethod (dart:core-patch/object_patch.dart:50:5)
+    #1      _Uri._uriEncode (dart:core-patch/uri_patch.dart:44:23)
+    #2      Uri.encodeFull (dart:core/uri.dart:1145:17)
+    #3      MappedListIterable.elementAt (dart:_internal/iterable.dart:414:29)
+    #4      MappedListIterable.elementAt (dart:_internal/iterable.dart:414:40)
+    #5      ListIterable.toList (dart:_internal/iterable.dart:219:19)
+    #6      FlutterManifest.assets (package:flutter_tools/src/flutter_manifest.dart:182:11)
+    #7      _parseAssets (package:flutter_tools/src/asset.dart:558:40)
+    ...
 
-```
-#0      Object.noSuchMethod (dart:core-patch/object_patch.dart:50:5)
-#1      _Uri._uriEncode (dart:core-patch/uri_patch.dart:44:23)
-#2      Uri.encodeFull (dart:core/uri.dart:1145:17)
-#3      MappedListIterable.elementAt (dart:_internal/iterable.dart:414:29)
-#4      MappedListIterable.elementAt (dart:_internal/iterable.dart:414:40)
-#5      ListIterable.toList (dart:_internal/iterable.dart:219:19)
-#6      FlutterManifest.assets (package:flutter_tools/src/flutter_manifest.dart:182:11)
-#7      _parseAssets (package:flutter_tools/src/asset.dart:558:40)
-...
-'''
 这一段有点困扰我，NoSuchMethodError: NoSuchMethodError: The getter 'length' was called on null. 获取不到资源尽然报错NoSuchMethodError。
 应该理解为，获取资源时资源为null。
 
